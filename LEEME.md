@@ -1,21 +1,20 @@
 # Vizcaína Living Home · Golf
 
 Landing responsive en HTML, CSS y JavaScript puro, sin instalación ni compilación.
-La versión anterior de florería en la carpeta superior se conserva sin cambios.
 
 ## Archivos
 
-- `dist/index.html`: estructura, textos, metadatos y formulario.
-- `dist/style.css`: estilos mobile-first, tipografía, estados y adaptación a escritorio.
-- `dist/script.js`: validación, envío POST, confirmación y redirección opcional.
-- `dist/assets/`: logotipo e ilustración originales proporcionados.
+- `index.html`: estructura, textos, metadatos y formulario.
+- `style.css`: estilos mobile-first, tipografía, estados y adaptación a escritorio.
+- `script.js`: validación, envío POST, confirmación y redirección opcional.
+- `assets/`: logotipo e ilustración originales proporcionados.
 
-Abre `dist/index.html` para ver el diseño, o sirve `dist/` con cualquier servidor estático.
+Abre `index.html` para ver el diseño, o sirve esta carpeta con cualquier servidor estático.
 Las tipografías usan Google Fonts; si no hay conexión se usan Georgia y Arial.
 
 ## Conectar el formulario
 
-1. En `dist/script.js`, sustituye `const API_URL = "PENDIENTE_CONFIGURAR"` por la URL HTTPS del servicio. En Apps Script, utiliza la URL de despliegue terminada en `/exec`.
+1. En `script.js`, sustituye `const API_URL = "PENDIENTE_CONFIGURAR"` por la URL HTTPS del servicio. En Apps Script, utiliza la URL de despliegue terminada en `/exec`.
 2. El servicio recibe un POST `text/plain;charset=utf-8` cuyo cuerpo es JSON con `nombre`, `empresa`, `correo`, `telefono`, `fecha` (ISO UTC) y `origen` (`vizcaina-golf`).
 3. El servidor debe validar los datos, guardarlos y devolver HTTP 2xx con JSON `{"success":true}` únicamente después del guardado. Debe permitir que el navegador lea la respuesta mediante CORS. No usar `no-cors`, ya que no permite verificar el guardado.
 4. El correo con el descuento debe enviarse desde el servicio que se conecte: esta landing no envía correos por sí misma.
