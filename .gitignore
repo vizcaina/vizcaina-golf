@@ -1,0 +1,7 @@
+# Configuración local y credenciales; no subir a GitHub.
+.openai/
+.sites-runtime/
+.env
+.env.*
+!.env.example
+.DS_Store
