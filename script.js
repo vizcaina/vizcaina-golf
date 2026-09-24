@@ -4,7 +4,7 @@
    El servidor debe validar los datos y devolver JSON { "success": true }
    SOLO después de guardarlos. Debe permitir CORS para el origen de esta web.
    No usar mode: "no-cors": impide comprobar que el registro fue guardado. */
-const API_URL = "PENDIENTE_CONFIGURAR";
+const API_URL = "https://script.google.com/macros/s/AKfycbxDWo132hdhwJeDtXNhtUxncTQ0ve2QL3EUEGVsyGWcKtDwFpBGhJHUeOjfcxYWK2dQ/exec";
 // Opcional: URL HTTPS de destino tras la confirmación. Vacía = permanecer aquí.
 const REDIRECT_URL = "";
 const REDIRECT_DELAY_MS = 4500;
