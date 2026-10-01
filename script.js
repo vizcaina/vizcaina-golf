@@ -22,7 +22,6 @@ function fieldError(field) {
   const value = field.value.trim();
   if (field.required && !value) return "Completa este campo para continuar.";
   if (field.id === "nombre" && value.length < 3) return "Escribe tu nombre completo (al menos 3 caracteres).";
-  if (field.id === "correo" && (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value) || field.validity.typeMismatch)) return "Escribe un correo válido, como nombre@correo.com.";
   if (field.id === "telefono" && (!/^[+\d\s().-]+$/.test(value) || !/^\d{10,15}$/.test(value.replace(/\D/g, "")))) return "Escribe un teléfono de 10 a 15 dígitos, con lada si corresponde.";
   if (value.length > field.maxLength) return "El texto es demasiado largo.";
   return "";
@@ -116,7 +115,7 @@ form.addEventListener("submit", async event => {
   } finally {
     sending = false;
     form.removeAttribute("aria-busy");
-    button.querySelector("span").textContent = "OBTENER MI DESCUENTO";
+    button.querySelector("span").textContent = "OBTENER MI INVITACIÓN";
     validate();
   }
 });
@@ -129,7 +128,7 @@ if (document.modelContext?.registerTool) {
     Promise.resolve(document.modelContext.registerTool({
       name: "prepare_golf_registration",
       description: "Completa el formulario de Vizcaína para revisión, sin enviarlo.",
-      inputSchema: { type: "object", properties: { nombre: { type: "string" }, empresa: { type: "string" }, correo: { type: "string" }, telefono: { type: "string" } }, required: ["nombre", "correo", "telefono"], additionalProperties: false },
+      inputSchema: { type: "object", properties: { nombre: { type: "string" }, telefono: { type: "string" } }, required: ["nombre", "telefono"], additionalProperties: false },
       annotations: { readOnlyHint: false },
       execute(input) {
         if (sending || completed) throw new Error("El registro ya está en proceso o confirmado.");
