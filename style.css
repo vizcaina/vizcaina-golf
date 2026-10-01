@@ -8,3 +8,5 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 @media(forced-colors:active){.brand img{filter:none}.submit-button:disabled{color:GrayText}.golf-art{forced-color-adjust:none}}
 @media(max-width:420px){.page-footer{font-size:12px;letter-spacing:.5px}}
+
+.invitation-badge{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:100%}.invitation-badge-label{color:var(--gold);font-size:10px;line-height:1.5;letter-spacing:2px;font-weight:600}.invitation-badge .sponsor{max-width:100%;text-align:center}.invitation-badge .sponsor strong{font-size:11px;line-height:1.5;letter-spacing:1px;font-weight:600}@media(max-width:420px){.invitation-badge .sponsor strong{font-size:10px;letter-spacing:.6px}}
